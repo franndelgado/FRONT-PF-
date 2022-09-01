@@ -7,7 +7,8 @@ import style from "./paginado.module.css";
 
 
 
-const itemsPerPage = 10;
+
+const itemsPerPage = 7;
 
 function Home() {
 
