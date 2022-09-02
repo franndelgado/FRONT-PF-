@@ -1,4 +1,5 @@
-import { GET_ALL } from "./Constants";
+import axios from "axios";
+import { GET_ALL, POST_PRODUCT } from "../Constants";
 
 
 export  function getAllCellphones (){
@@ -10,3 +11,13 @@ export  function getAllCellphones (){
         })
     }
 }
+
+export function postProduct(payload) {
+    return async function(dispatch) {
+        const res = await axios.post('http://localhost:3001/product', payload)
+        return {
+            type: POST_PRODUCT,
+            res
+        }
+    };
+};

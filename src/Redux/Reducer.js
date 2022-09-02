@@ -1,4 +1,4 @@
-import { GET_ALL } from "./Constants";
+import { GET_ALL, POST_PRODUCT } from "./Constants";
 
 
 const initialState = {
@@ -12,7 +12,10 @@ const rootReducer = (state=initialState, {type,payload})=>{
                 ...state,
                 cellphones:payload
             }
-    
+        case POST_PRODUCT:
+            return{
+                ...state,
+            }
         default:
             return state
     }
