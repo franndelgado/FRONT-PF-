@@ -24,7 +24,7 @@ export default function Paginado({
   };
 
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(celulares.length / itemsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(celulares?.length / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 
@@ -40,7 +40,7 @@ export default function Paginado({
   const handlePrevbtn = () => {
     setPagActual(pagActual - 1);
 
-    if ((pagActual - 1) % pageNumberLimit == 0) {
+    if ((pagActual - 1) % pageNumberLimit === 0) {
       setMaxPageNumberList(maxPageNumberList - pageNumberLimit);
       setMinPageNumberList(minPageNumberList - pageNumberLimit);
     }
@@ -49,7 +49,7 @@ export default function Paginado({
   const renderPageNumbers = pageNumbers.map((number) => {
     if (number < maxPageNumberList + 1 && number > minPageNumberList) {
       return (
-        <li key={number} id={number} onClick={(e) => handleClick(e)} className={pagActual == number ? style.active : null}>{number}</li>
+        <li key={number} id={number} onClick={(e) => handleClick(e)} className={pagActual === number ? style.active : null}>{number}</li>
       );
     } else return null;
   });

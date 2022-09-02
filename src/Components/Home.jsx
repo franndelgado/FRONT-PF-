@@ -1,7 +1,7 @@
 import {useDispatch, useSelector } from "react-redux";
 import { React, useState, useEffect } from "react";
 import {getAllCellphones} from "../Redux/Actions.js";
-import Card from "../Components/Card"
+import ProductCard from "../Components/productCard"
 import Paginado from "./Paginado"
 import style from "./paginado.module.css";
 
@@ -14,6 +14,8 @@ function Home() {
 
     const dispatch = useDispatch()
     const celulares = useSelector(state=> state.cellphones)
+
+    console.log('Todos los celuuuuuus', celulares)
 
     const [orden, setOrden] = useState("");
 
@@ -39,9 +41,9 @@ function Home() {
             <Paginado pagActual={pagActual} todosCelulares={celulares} itemsPerPage={itemsPerPage} setPagActual={page => setPagActual(page)}/>
             </div>
             {
-                celulares.map(e=>{
+                celulares.map((e,i)=>{
                     return(
-                        <Card nombre={e}/>
+                        <ProductCard key={i} marca={e.marca} model={e.model} price={e.price} ram={e.ram} camera={e.camera} image={e.image} stock={e.stock}/>
                     )
                 })
             }
