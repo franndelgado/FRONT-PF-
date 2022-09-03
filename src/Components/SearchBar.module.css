@@ -1,0 +1,6 @@
+.button{
+    /* background-image: url('../imagenes/fondo4.jpg'); */
+    background-color: rgba(0, 0, 0, 0.342);
+    color: white;
+    cursor: pointer;
+}

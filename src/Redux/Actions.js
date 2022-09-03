@@ -1,5 +1,5 @@
 import { GET_ALL, ORDER_BY_BRAND, ORDER_BY_PRICE } from "./Constants";
-import axios from 'axios'
+import {axios} from 'axios'
 
 export  function getAllCellphones (){
     return async (dispatch)=>{
@@ -10,6 +10,7 @@ export  function getAllCellphones (){
         })
     }
 }
+
 
 export function orderByBrand(payload){
     return{
