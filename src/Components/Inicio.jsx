@@ -1,4 +1,4 @@
-
+import FormContainer from './LandingForms/Container'
 function Inicio() {
 
     return (
@@ -6,6 +6,7 @@ function Inicio() {
             <h1>
             ECOMMERCE CELULARE
             </h1>
+            <FormContainer/>
         </div>
       );
 }
