@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ALL, POST_PRODUCT } from "../Constants";
+import { GET_ALL, POST_PRODUCT } from "./Constants";
 
 
 export  function getAllCellphones (){

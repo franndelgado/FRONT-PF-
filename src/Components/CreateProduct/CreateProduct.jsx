@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {postProduct} from '../actions/index';
+import {postProduct} from '../../Redux/Actions';
 
 function validate(input){
     let errors = {};
@@ -76,7 +76,7 @@ export default function CreateProduct(){
         <div>
             {/* <Link to='/home'>Volver</Link> */}
             <h1 >Publicar un producto</h1>
-            <form onSubmit={handleSubmit(e)} >
+            <form onSubmit={(e)=>handleSubmit(e)} >
 
                     <div >
                         <label>Modelo:
