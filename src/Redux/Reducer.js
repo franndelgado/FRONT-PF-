@@ -1,4 +1,4 @@
-import { GET_ALL, ORDER_BY_BRAND, ORDER_BY_PRICE } from "./Constants";
+import { GET_ALL, POST_PRODUCT } from "./Constants";
 
 
 const initialState = {
@@ -12,17 +12,10 @@ const rootReducer = (state=initialState, {type,payload})=>{
                 ...state,
                 cellphones:payload
             }
-        case ORDER_BY_BRAND :
-            return {
+        case POST_PRODUCT:
+            return{
                 ...state,
-                cellphones:payload
             }
-        case ORDER_BY_PRICE :
-            return {
-                ...state,
-                cellphones:payload
-            }
-    
         default:
             return state
     }
