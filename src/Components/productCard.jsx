@@ -13,17 +13,17 @@ function productCard({marca, model, price, ram, camera, image, stock})
 
             <h1 className={s.marca}> Marca: {marca} </h1>
 
-            <img className={s.img}  src= {image} alt= 'Imagen no encontrada' width="400px" height="250px" /> 
+            <img className={s.img}  src= {image} alt= 'Imagen no encontrada' /> 
             
-            <h3  className={s.model}>Modelo: {model}</h3> 
+            <h3  className={s.h5}>Modelo: {model}</h3> 
             
-            <h4 className={s.price}>Precio: {price} $</h4>
+            <h4 className={s.h5}>Precio: {price} $</h4>
 
-            <h5 className={s.ram}>Memoria ram: {ram}</h5>
+            <h5 className={s.h5}>Memoria ram: {ram}</h5>
 
-            <h5 className={s.camera}>Camara: {camera}</h5>
+            <h5 className={s.h5}>Camara: {camera}</h5>
 
-            <h5 className={s.stock}>Stock: {stock}</h5>
+            <h5 className={s.h5}>Stock: {stock}</h5>
 
 
         </div>   
