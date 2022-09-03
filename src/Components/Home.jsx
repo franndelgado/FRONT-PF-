@@ -3,8 +3,9 @@ import { React, useState, useEffect } from "react";
 import {getAllCellphones} from "../Redux/Actions.js";
 import ProductCard from "../Components/productCard";
 import Paginado from "./Paginado";
-import style from "./paginado.module.css";
 import SearchBar from "./SearchBar";
+import style from "./Home.module.css";
+
 
 
 
@@ -37,7 +38,7 @@ function Home() {
 
     return(
         
-        <div>
+        <div className= {style.Home}>
              <div className={style.paginado}>
             <Paginado pagActual={pagActual} todosCelulares={celulares} 
             itemsPerPage={itemsPerPage} setPagActual={page => setPagActual(page)}/>
