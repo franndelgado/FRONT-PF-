@@ -6,7 +6,7 @@ const pageNumberLimit = 10;
 
 export default function Paginado({
   pagActual,
-  celulares,
+  todosCelulares,
   itemsPerPage,
   setPagActual,
 }) {
@@ -17,15 +17,16 @@ export default function Paginado({
     setPagActual(1);
     setMaxPageNumberList(10);
     setMinPageNumberList(0);
-  }, [celulares])
+  }, [todosCelulares])
 
   const handleClick = (event) => {
     setPagActual(Number(event.target.id));
   };
 
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(celulares.length / itemsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(todosCelulares.length / itemsPerPage); i++) {
     pageNumbers.push(i);
+    console.log(pageNumbers)
   }
 
   const handleNextbtn = () => {
@@ -40,21 +41,24 @@ export default function Paginado({
   const handlePrevbtn = () => {
     setPagActual(pagActual - 1);
 
-    if ((pagActual - 1) % pageNumberLimit == 0) {
+    if ((pagActual - 1) % pageNumberLimit === 0) {
       setMaxPageNumberList(maxPageNumberList - pageNumberLimit);
       setMinPageNumberList(minPageNumberList - pageNumberLimit);
     }
   };
 
-  const renderPageNumbers = pageNumbers.map((number) => {
+  const renderPageNumbers = pageNumbers?.map((number) => {
+    console.log(pageNumbers)
     if (number < maxPageNumberList + 1 && number > minPageNumberList) {
       return (
-        <li key={number} id={number} onClick={(e) => handleClick(e)} className={pagActual == number ? style.active : null}>{number}</li>
+        <li key={number} id={number} onClick={(e) => handleClick(e)} 
+        className={pagActual === number ? style.active : null}>{number}</li>
       );
     } else return null;
   });
 
   return (
+    <nav>
     <div>
       <ul className={style.pageNumbers}>
         <li>
@@ -78,5 +82,6 @@ export default function Paginado({
         </li>
       </ul>
     </div>
+    </nav>
   );
 }
