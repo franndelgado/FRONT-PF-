@@ -44,7 +44,7 @@ function Home() {
             <SearchBar />
             </div>
             <div className={style.box}>
-            {celulares?.map((e,i)=>{
+            {CelActual?.map((e,i)=>{
                     return(
                         <ProductCard key={i} marca={e.marca} 
                         model={e.model} price={e.price} ram={e.ram} 
