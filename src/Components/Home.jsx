@@ -22,7 +22,7 @@ function Home() {
 
     const [pagActual, setPagActual] = useState(1); // Mi pagina actual sera 1
     // const [celsPerPage, setcelsPerPage] = useState(6);
-
+    console.log(pagActual)
   
     const indexOfUltimoCel = pagActual * itemsPerPage; // 10
     const indexOfPrimerCel = indexOfUltimoCel - itemsPerPage; // 0
@@ -31,18 +31,16 @@ function Home() {
    
 
     useEffect(() => {
-     dispatch(getAllCellphones())
-      return () => {
-     console.log("desmonte Home")
-      }
-    }, [dispatch])
+     dispatch(getAllCellphones());
+       }, [dispatch]);
     
 
     return(
         
         <div>
              <div className={style.paginado}>
-            <Paginado pagActual={pagActual} todosCelulares={celulares} itemsPerPage={itemsPerPage} setPagActual={page => setPagActual(page)}/>
+            <Paginado pagActual={pagActual} todosCelulares={celulares} 
+            itemsPerPage={itemsPerPage} setPagActual={page => setPagActual(page)}/>
             <SearchBar />
             </div>
             <div className={style.box}>

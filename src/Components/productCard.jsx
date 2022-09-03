@@ -4,7 +4,7 @@ import s from "./productCard.module.css"
 
 
 function productCard({marca, model, price, ram, camera, image, stock})
-
+    // const dispatch = useDispatch();
 {
 
     return (
