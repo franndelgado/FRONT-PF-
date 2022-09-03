@@ -11,6 +11,7 @@ export  function getAllCellphones (){
     }
 }
 
+
 export function orderByBrand(payload){
     return{
         type:ORDER_BY_BRAND,
